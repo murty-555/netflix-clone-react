@@ -1,12 +1,8 @@
-import React from 'react'
-import './Player.css'
+import React from "react";
+import "./Player.css";
 
 const Player = () => {
-  return (
-    <div className='player'>
-        
-    </div>
-  )
-}
+  return <div className="player"></div>;
+};
 
-export default Player
+export default Player;
