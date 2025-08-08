@@ -5,12 +5,11 @@ import search_icon from "../../assets/search_icon.svg";
 import bell_icon from "../../assets/bell_icon.svg";
 import profile_img from "../../assets/profile_img.png";
 import caret_icon from "../../assets/caret_icon.svg";
-import { useNavigate } from "react-router-dom";
+import { logout } from "../../firebase";
 
 const Navbar = () => {
 
   const navRef = useRef();
-  const navigate = useNavigate()
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
@@ -43,7 +42,7 @@ const Navbar = () => {
           <img src={profile_img} alt="" className="profile" />
           <img src={caret_icon} alt="" />
           <div className="dropdown">
-            <p onClick={() => navigate("/login")}>Sign out of netflix</p>
+            <p onClick={() => logout()}>Sign out of netflix</p>
           </div>
         </div>
       </div>
