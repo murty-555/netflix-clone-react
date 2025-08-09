@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./Login.css";
 import logo from "../../assets/logo.png";
-import netflix_spinner from '../../assets/netflix_spinner.gif'
+import netflix_spinner from "../../assets/netflix_spinner.gif";
 import { login, signup } from "../../firebase";
 
 const Login = () => {
@@ -12,20 +12,21 @@ const Login = () => {
   const [loading, setLoading] = useState(false);
 
   const user_auth = async (e) => {
-    e.preventDefault()
-    setLoading(true)
-    if(signState === "Sign In"){
-      await login(email, password)
-    }else{
-      await signup(name, email, password)
+    e.preventDefault();
+    setLoading(true);
+    if (signState === "Sign In") {
+      await login(email, password);
+    } else {
+      await signup(name, email, password);
     }
-    setLoading(false)
-  } 
+    setLoading(false);
+  };
 
-  return (
-    loading ? <div className="login-spinner">
+  return loading ? (
+    <div className="login-spinner">
       <img src={netflix_spinner} alt="" />
-    </div> : 
+    </div>
+  ) : (
     <div className="login">
       <img src={logo} alt="" className="login-logo" />
       <div className="login-form">
@@ -51,7 +52,9 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             placeholder="Password"
           />
-          <button onClick={user_auth} type="submit">{signState}</button>
+          <button onClick={user_auth} type="submit">
+            {signState}
+          </button>
           <div className="form-help">
             <div className="remember">
               <input type="checkbox" />

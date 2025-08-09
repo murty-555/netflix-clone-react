@@ -8,18 +8,17 @@ import caret_icon from "../../assets/caret_icon.svg";
 import { logout } from "../../firebase";
 
 const Navbar = () => {
-
   const navRef = useRef();
 
   useEffect(() => {
     window.addEventListener("scroll", () => {
-      if(window.scrollY >= 80){
-        navRef.current.classList.add("nav-dark")
-      }else{
-        navRef.current.classList.remove("nav-dark")
+      if (window.scrollY >= 80) {
+        navRef.current.classList.add("nav-dark");
+      } else {
+        navRef.current.classList.remove("nav-dark");
       }
-    })
-  },[])
+    });
+  }, []);
 
   return (
     <div className="navbar" ref={navRef}>
